@@ -28,6 +28,7 @@
                     <td>{{$post->updated_at}}</td>
                     <td>
                         <a href="{{ route('admin.posts.show', $post) }}"><i class="fa-regular fa-eye"></i></a>
+                        <a href="{{ route('admin.posts.edit', $post) }}"><i class="fa-solid fa-pencil"></i></a>
                     </td>
                 </tr>
             @empty
