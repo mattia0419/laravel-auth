@@ -95,6 +95,20 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $data = $request->all();
+        Validator::make(
+            $data,
+            [
+                'title' => 'required|string',
+                'content' => 'required',
+                'slug' => 'required'
+            ],
+            [
+                'title.required' => 'Il titolo è obbligatorio',
+                'title.string' => 'Il titolo deve essere una stringa',
+                'content.required' => 'Il contenuto è obbligatorio',
+                'slug.required' => 'Lo slug è obbligatorio'
+            ]
+            )->validate();
         $post->update($data);
 
         return redirect()->route('admin.posts.show', $post);
