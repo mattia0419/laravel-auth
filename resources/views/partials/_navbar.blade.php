@@ -41,7 +41,12 @@
               </form>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Route::currentRouteName() == 'admin.posts.index' ? 'active' : '' }}"
+              href="{{ route('admin.posts.index') }}" aria-current="page">Post<span class="visually-hidden">(current)</span></a>
+          </li>
         @endguest
+        
       </ul>
       {{-- <form class="d-flex my-2 my-lg-0">
         <input class="form-control me-sm-2" type="text" placeholder="Search">

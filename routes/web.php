@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
+
 use App\Http\Controllers\Guest\PageController as GuestPageController;
 
 /*
@@ -26,6 +27,7 @@ Route::middleware(['auth', 'verified'])
 
     Route::get('/', [AdminPageController::class, 'index'])->name('home');
 
+    Route::resource('posts', PostController::class);
   });
 
 require __DIR__ . '/auth.php';
