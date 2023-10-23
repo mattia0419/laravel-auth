@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+@endsection
+
 @section('content')
 <div class="container">
+    <a href="{{ route('admin.posts.create') }}" class="btn btn-outline-success my-3">Crea proggetto</a>
     <table class="table">
         <thead>
           <tr>
@@ -22,7 +27,7 @@
                     <td>{{$post->created_at}}</td>
                     <td>{{$post->updated_at}}</td>
                     <td>
-                        <a href="{{ route('admin.posts.show', $post) }}">Show</a>
+                        <a href="{{ route('admin.posts.show', $post) }}"><i class="fa-regular fa-eye"></i></a>
                     </td>
                 </tr>
             @empty

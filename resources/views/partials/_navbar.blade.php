@@ -43,7 +43,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Route::currentRouteName() == 'admin.posts.index' ? 'active' : '' }}"
-              href="{{ route('admin.posts.index') }}" aria-current="page">Post<span class="visually-hidden">(current)</span></a>
+              href="{{ route('admin.posts.index') }}" aria-current="page">Progetti<span class="visually-hidden">(current)</span></a>
           </li>
         @endguest
         
